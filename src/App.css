@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Karla:wght@700&display=swap");
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: fit-content;
+  background-color: #f5f7fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blob-yellow {
+  width: 293px;
+  height: 297px;
+  position: absolute;
+  top: -100px;
+  right: -50px;
+  background-color: #fffad1;
+  transform: rotate(-128.49deg);
+  border-radius: 52% 48% 45% 55% / 58% 72% 28% 42%;
+  transition: all .5s ease-in-out;
+}
+
+.blob-blue {
+  width: 293px;
+  height: 297px;
+  position: absolute;
+  bottom: -100px;
+  left: -50px;
+  background-color: #deebf8;
+  transform: rotate(128.49deg);
+  border-radius: 52% 48% 45% 55% / 58% 72% 28% 42%;
+  transition: all .5s ease-in-out;
+}
+
+.introPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.introPage--title {
+  font-family: "Karla", sans-serif;
+  font-size: 1.5rem;
+}
+
+.introPage--text {
+  font-family: "Inter", sans-serif;
+  margin: 20px 0 30px;
+}
+
+.introPage--button, .form--check, .form--time-stop {
+  background-color: #4d5b9e;
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+main {
+  padding: 50px 0;
+  display: flex;
+}
+
+.form--time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.form--time-duration {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+}
+
+.form--check {
+  margin: 20px 0;
+  align-self: center;
+}
+
+.form--parent {
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  max-width: 60vw;
+}
+
+.form h3 {
+  font-family: 'Karla', sans-serif;
+}
+
+.form--radios {
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: fit-content(100%) fit-content(100%);
+}
+
+.form--radios div {
+  margin: 5px 0;
+}
+
+
+.form--radio {
+  display: none;
+}
+
+.form--label {
+  display: inline-block;
+  height: fit-content;
+  font-family: 'Inter', san-serif;
+  padding: 5px 20px;
+  border: 2px solid black;
+  border-radius: 15px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 13px
+}
+
+.form--false {
+  background-color: #F8BCBC !important;
+  border-color: #F8BCBC !important;
+}
+
+.form--true {
+  background-color: #94D7A2 !important;
+  border-color: #94D7A2 !important;
+}
+
+.form--warning {
+  font-family: 'Inter', sans-serif;
+  color: #F8BCBC
+}
+
+.radio1:checked ~ .label1,
+.radio2:checked ~ .label2,
+.radio3:checked ~ .label3,
+.radio4:checked ~ .label4 {
+  background-color: #D6DBF5;
+  border-color: #D6DBF5
+}
+
+.radio1:disabled ~ .label1,
+.radio2:disabled ~ .label2,
+.radio3:disabled ~ .label3,
+.radio4:disabled ~ .label4 {
+  color: rgba(0, 0, 0, 0.507);
+  border-color: rgba(0, 0, 0, 0.507);
+}
+/* Loading Components */
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: url(../public/assets/loading.gif) no-repeat center center;
+  z-index: 100;
+}
+
+
+@keyframes animate {
+  0% {
+    transform: scale(1);
+  }  
+  80%, 100% {
+    transform: scale(0);
+  }
+}
+
+@media screen and (max-width: 700px){
+  main {
+    z-index: 1;
+  }
+  .form {
+    max-width: 70vw;
+    z-index: 1;
+  }
+  .form--radios {
+    grid-template-columns: fit-content(100%);
+  }
+  .form h3 {
+    font-size: 25px;
+  }
+}
